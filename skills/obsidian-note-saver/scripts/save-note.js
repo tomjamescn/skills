@@ -11,7 +11,7 @@ Options:
   --title, -t       Title of the note (used as filename and heading) (required)
   --content, -c     Content of the note (required)
   --agent, -a       Agent type/name (e.g. claude-code, opencode, antigravity-cli) (default: auto-detected)
-  --vault, -v       Path to the Obsidian vault directory (optional)
+  --vault, -v       Path to the Obsidian vault directory (saves to '0-收件箱/agent笔记' folder inside the vault) (optional)
   --file, -f        Specific file path to write the note to (optional)
   --help, -h        Show this help message
 `);
@@ -100,10 +100,10 @@ if (specificFilePath) {
   await fs.writeFile(resolvedPath, formattedNote, 'utf-8');
   console.log(`✓ Note saved successfully to: ${resolvedPath}`);
 } else if (vaultPath) {
-  const resolvedVaultPath = path.resolve(vaultPath);
-  await fs.mkdir(resolvedVaultPath, { recursive: true });
+  const targetDir = path.join(path.resolve(vaultPath), '0-收件箱', 'agent笔记');
+  await fs.mkdir(targetDir, { recursive: true });
   const cleanTitle = title.replace(/[/\\?%*:|"<>\s]+/g, '_');
-  const targetPath = path.join(resolvedVaultPath, `${cleanTitle}.md`);
+  const targetPath = path.join(targetDir, `${cleanTitle}.md`);
   await fs.writeFile(targetPath, formattedNote, 'utf-8');
   console.log(`✓ Note saved successfully to Obsidian vault: ${targetPath}`);
 } else {

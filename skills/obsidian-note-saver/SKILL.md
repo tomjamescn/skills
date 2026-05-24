@@ -26,8 +26,8 @@ node skills/obsidian-note-saver/scripts/save-note.js -t "My Note Title" -c "My N
    - `time`: Current local time (`HH:mm:ss`).
    - `project_name`: Current directory name.
    - `project_path`: Current directory absolute path.
-3. **Execution (via fns mcp)**: Use the `fns` MCP tools (or other file-writing tools) to save the formatted markdown note into the Obsidian vault.
-   - If using the helper script, run `node skills/obsidian-note-saver/scripts/save-note.js --title "<Title>" --content "<Content>" --vault "<VaultPath>"` to write directly.
+3. **Execution (via fns mcp)**: Use the `fns` MCP tools (or other file-writing tools) to save the formatted markdown note into the Obsidian vault under the directory `0-收件箱/agent笔记/`.
+   - If using the helper script, run `node skills/obsidian-note-saver/scripts/save-note.js --title "<Title>" --content "<Content>" --vault "<VaultPath>"` to write directly to `<VaultPath>/0-收件箱/agent笔记/`.
 4. **Validation**: Check that the frontmatter contains all 5 required fields and that the Markdown compiles cleanly.
 
 ## Available Scripts
