@@ -1,0 +1,22 @@
+{
+  "name": "tomjamescn-skills",
+  "version": "1.0.0",
+  "description": "My custom Agent Skills library following the open Agent Skills Specification",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "node scripts/validate.js",
+    "create": "node scripts/create-skill.js"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude",
+    "ai-agents",
+    "mcp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.4.5"
+  }
+}
